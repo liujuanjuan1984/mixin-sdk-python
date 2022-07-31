@@ -27,7 +27,7 @@ async def message_handle(message):
         return
 
     if action == "LIST_PENDING_MESSAGES":
-        print("Mixin blaze server: 👂")
+        print("Mixin blaze server: ")
         return
 
     if action == "ERROR":
@@ -61,7 +61,7 @@ async def message_handle(message):
 
             if msgview.data_decoded == "hi":
                 await bot.blaze.send_message(
-                    pack_message(pack_text_data("👋 hello"), msgview.conversation_id),
+                    pack_message(pack_text_data("hello"), msgview.conversation_id),
                 )
 
             await bot.blaze.echo(msgview.message_id)

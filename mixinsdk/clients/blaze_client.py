@@ -84,7 +84,7 @@ class BlazeClient:
                     asyncio.run(self.ws.send(raw_msg))
                 except Exception as e:
                     self.logger.error("Exception occurred", exc_info=True)
-                    print("❌ Exception in sender:", e.__class__.__name__, str(e))
+                    print("Exception in sender:", e.__class__.__name__, str(e))
             self.logger.debug("sender stopped")
 
         sender_pool.submit(sender)
@@ -149,7 +149,7 @@ class BlazeClient:
             except Exception as e:
                 self.logger.error("Exception occurred", exc_info=True)
                 print(
-                    f"❌ Exception in websocket loop: {e.__class__.__name__} : {str(e)}"
+                    f"Exception in websocket loop: {e.__class__.__name__} : {str(e)}"
                 )
             finally:
                 if self._exiting:
